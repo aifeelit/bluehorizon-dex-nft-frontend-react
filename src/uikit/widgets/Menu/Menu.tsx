@@ -76,7 +76,7 @@ const StyledHeading = styled(Heading)`
 `
 
 const StyledMenuButton = styled(MenuButton)`
-  color: #ff9000;
+  color: #f7941d;
   background-color: #000000;
   height: 32px;
 `

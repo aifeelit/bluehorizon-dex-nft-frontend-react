@@ -153,7 +153,7 @@ const BridgeCard = ({currentId}) => {
           )}
         </Block>
         {account && (
-          <Button onClick={() => swap()} disabled style={{border: '1px solid #ff9000'}} >
+          <Button onClick={() => swap()} disabled style={{border: '1px solid #f7941d'}} >
             Swap
           </Button>
         )}
