@@ -95,12 +95,12 @@ const Home: React.FC = () => {
             <Tokenomics currentId={currentId} />
           </Cards>
           <Cards>
-            <PriceChart />
             <ZapperData currentId={currentId} />
+            <PriceChart />
           </Cards>
-          <Cards>
+          {/* <Cards>
             <BridgeCard currentId={currentId} />
-          </Cards>
+          </Cards> */}
         </div>
       </Page>
     </>

@@ -177,7 +177,7 @@ const Menu: React.FC<NavProps> = ({
           <>
             <ActiveStyledMenuButton onClick={() => changeNetwork('0x1')}>ETHEREUM</ActiveStyledMenuButton>
             <StyledHeading as="h1" scale="xl" mb="24px" color="text" marginBottom={0}>
-              FSV Dashboard
+              SMART NODES
             </StyledHeading>
             <StyledMenuButton onClick={() => changeNetwork('0x38')}>BINANCE</StyledMenuButton>
           </>
@@ -186,7 +186,7 @@ const Menu: React.FC<NavProps> = ({
           <>
             <StyledMenuButton onClick={() => changeNetwork('0x1')}>ETHEREUM</StyledMenuButton>
             <StyledHeading as="h1" scale="xl" mb="24px" color="text" marginBottom={0}>
-              FSV Dashboard
+              SMART NODES
             </StyledHeading>
             <ActiveStyledMenuButton onClick={() => changeNetwork('0x38')}>BINANCE</ActiveStyledMenuButton>
           </>

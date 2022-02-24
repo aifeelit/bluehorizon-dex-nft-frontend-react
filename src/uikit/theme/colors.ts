@@ -1,7 +1,7 @@
 import { Colors } from "./types";
 
 export const baseColors = {
-  primary: "#f7941d",
+  primary: "#faa21a",
   primaryBright: "#53DEE9",
   primaryDark: "#0098A1",
   secondary: "#03A9F4",
@@ -20,7 +20,7 @@ export const additionalColors = {
 export const lightColors: Colors = {
   ...baseColors,
   ...additionalColors,
-  background: "#000000",
+  background: "#3a3a3c",
   backgroundDisabled: "#26241b",
   backgroundAlt: "#26241b",
   cardBorder: "#26241b",
@@ -31,7 +31,7 @@ export const lightColors: Colors = {
   input: "#303742",
   inputSecondary: "#15181E",
   tertiary: "#303742",
-  text: "#f7941d",
+  text: "#faa21a",
   textDisabled: "#777E89",
   textSubtle: "#ffffff",
   disabled: "#E9EAEB",
