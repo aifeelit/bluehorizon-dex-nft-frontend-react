@@ -67,7 +67,7 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      <LogoWithTextWrapper src='images/newlogo-pc.svg' alt='logo' />
+      <LogoWithTextWrapper src='images/newlogo-pc.png' alt='logo' />
       <LogoWrapper src='images/newlogo-mobile.png' alt='logo' />
     </>
   );

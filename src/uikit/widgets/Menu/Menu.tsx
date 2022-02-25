@@ -173,24 +173,13 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? '/'}
         />
-        {currentId === 1 && (
-          <>
-            <ActiveStyledMenuButton onClick={() => changeNetwork('0x1')}>ETHEREUM</ActiveStyledMenuButton>
-            <StyledHeading as="h1" scale="xl" mb="24px" color="text" marginBottom={0}>
-              SMART NODES
-            </StyledHeading>
-            <StyledMenuButton onClick={() => changeNetwork('0x38')}>BINANCE</StyledMenuButton>
-          </>
-        )}
-        {currentId === 56 && (
-          <>
-            <StyledMenuButton onClick={() => changeNetwork('0x1')}>ETHEREUM</StyledMenuButton>
-            <StyledHeading as="h1" scale="xl" mb="24px" color="text" marginBottom={0}>
-              SMART NODES
-            </StyledHeading>
-            <ActiveStyledMenuButton onClick={() => changeNetwork('0x38')}>BINANCE</ActiveStyledMenuButton>
-          </>
-        )}
+        {/* <>
+          <StyledMenuButton onClick={() => changeNetwork('0x1')}>ETHEREUM</StyledMenuButton>
+          <StyledHeading as="h1" scale="xl" mb="24px" color="text" marginBottom={0}>
+            SMART NODES
+          </StyledHeading>
+          <ActiveStyledMenuButton onClick={() => changeNetwork('0x38')}>BINANCE</ActiveStyledMenuButton>
+        </> */}
         {!!login && !!logout && (
           <Flex>
             <UserBlock account={account} login={login} logout={logout} />

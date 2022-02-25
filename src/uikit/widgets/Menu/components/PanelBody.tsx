@@ -35,12 +35,15 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
         const Icon = Icons[entry.icon];
         const iconElement = <Icon width="24px" mr="8px" />;
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
-
-        if (entry.items) {
-          const itemsMatchIndex = entry.items.findIndex((item) => item.href === location.pathname);
-          const initialOpenState = entry.initialOpenState === true ? entry.initialOpenState : itemsMatchIndex >= 0;
+        // entry.items
+        // console.log("000000");
+        // console.log(links);
+        if (true) {
+          // const itemsMatchIndex = entry.items.findIndex((item) => item.href === location.pathname);
+          // const initialOpenState = entry.initialOpenState === true ? entry.initialOpenState : itemsMatchIndex >= 0;
 
           return (
+            // <div>sdlfkasfsdfsadfsadfsdfsjdf</div>
             <Accordion
               key={entry.label}
               isPushed={isPushed}
@@ -48,7 +51,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               icon={iconElement}
               label={entry.label}
               status={entry.status}
-              initialOpenState={initialOpenState}
+              initialOpenState={true}
               className={calloutClass}
               isActive={entry.items.some((item) => item.href === location.pathname) || (entry.icon==='TradeIcon' && location.pathname==='/add')}
             >

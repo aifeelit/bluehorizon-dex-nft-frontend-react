@@ -1,6 +1,6 @@
 {
   "short_name": "SMART NODES",
-  "name": "Farming Service Vault",
+  "name": "Smart Nodes Finanace",
   "description": "The Best Trading Option.",
   "homepage_url": "https://.finance",
   "start_url": ".",
@@ -10,7 +10,7 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "sn_logo.ico",
       "type": "image/x-icon",
       "sizes": "128x128"
     },

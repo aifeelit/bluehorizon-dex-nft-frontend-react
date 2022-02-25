@@ -31,7 +31,7 @@ const StyledCardBody = styled(CardBody)`
   justify-content: space-between;
 `
 const StyledInput = styled(Input)`
-  background-color: #26241b;
+  background-color: #2b2b2b;
   width: 70%;
   font-size: 30px;
   padding: 0px;
