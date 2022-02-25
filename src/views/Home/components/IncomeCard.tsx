@@ -42,11 +42,18 @@ const StyledCardBody = styled(CardBody)`
   flex-direction: column;
   justify-content: space-between;
 `
+const StyledImg = styled.img`
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+`
 
 const DEFAULT_TIME_WINDOW: Duration = { weeks: 1 }
 const ONE_HOUR_SECONDS = 3600
 
-const IncomeCard = ({ currentId }) => {
+const IncomeCard = ({ img }) => {
   const { account } = useWeb3React()
   const { currentNetId } = useSelector((state: State) => ({
     currentNetId: state.info.currentNetId,
@@ -87,9 +94,7 @@ const IncomeCard = ({ currentId }) => {
   return (
     <StyledCard>
       <RowBlockBetween>
-        <StyledCardBody>
-          IMG
-        </StyledCardBody>
+        <StyledImg src={img} alt='status_logo'/>
         <StyledCardBody>
           <Heading scale="sm" mb="8px">
             $SNRZ

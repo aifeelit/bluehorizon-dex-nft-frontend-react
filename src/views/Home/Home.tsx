@@ -123,7 +123,7 @@ const Home: React.FC = () => {
             <WalletCard title="Remaining time for new node creations" val1="2d 20h 33m" img='images/status4.jpg' />
           </Cards>
           <BigCards>
-            <IncomeCard currentId={currentId} />
+            <IncomeCard img='images/income.jpg' />
             <CustomCards>
               <RewardCard />
               <NewnodeCard />
