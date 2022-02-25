@@ -29,7 +29,13 @@ const RowBlockBetween = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `
-
+const StyledImg = styled.img`
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+`
 const Label = styled.div`
   color: ${({ theme }) => theme.colors.textSubtle};
 `
@@ -96,9 +102,9 @@ const WalletCard = ({ title, val1, val2, img }) => {
             <Label>{val2}</Label>
           </RowBlock>
         </StyledCardBody>
-        <StyledCardBody>
-          <img src={img} alt='status_logo' />
-        </StyledCardBody>
+        {/* <StyledCardBody> */}
+          <StyledImg src={img} alt='status_logo' />
+        {/* </StyledCardBody> */}
       </RowBlockBetween>
     </StyledCard>
   )
