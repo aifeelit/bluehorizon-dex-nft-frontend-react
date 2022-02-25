@@ -30,8 +30,20 @@ const RowBlockBetween = styled.div`
   justify-content: space-between;
 `
 
-const Label = styled.div`
+const StyledInput = styled.input`
   color: ${({ theme }) => theme.colors.textSubtle};
+  font-size: 20px;
+  margin-bottom: 22px;
+  margin-top: 24px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #3a3a3c;
+  width: 80%;
+  border: 0px;
+  :focus{
+    border: 0px;
+    outline: 0;
+  }
 `
 const Actions = styled.div`
   margin-top: 24px;
@@ -40,13 +52,43 @@ const StyledCardBody = styled(CardBody)`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 `
+
+const StyledButton = styled.button`
+  align-items: center;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  width: 80%;
+  font-family: inherit;
+  font-size: 16px;
+  // font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  background-color: #3a3a3c;
+  color: #faa21a;
+  // line-height: 1;
+  // outline: 0;
+  transition: background-color 0.2s, opacity 0.2s;
+
+  &:hover {
+    opacity: 0.65;
+  }
+
+  &:active {
+    opacity: 0.85;
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+`;
 
 const DEFAULT_TIME_WINDOW: Duration = { weeks: 1 }
 const ONE_HOUR_SECONDS = 3600
 
-const WalletCard = ({ title, val1, val2, img }) => {
+const NewnodeCard = ({ currentId }) => {
   const { account } = useWeb3React()
   const { currentNetId } = useSelector((state: State) => ({
     currentNetId: state.info.currentNetId,
@@ -86,22 +128,15 @@ const WalletCard = ({ title, val1, val2, img }) => {
 
   return (
     <StyledCard>
-      <RowBlockBetween>
-        <StyledCardBody>
-          <Heading scale="sm" mb="8px">
-            {title}
-          </Heading>
-          <RowBlock>
-            <Label>{val1}</Label>
-            <Label>{val2}</Label>
-          </RowBlock>
-        </StyledCardBody>
-        <StyledCardBody>
-          <img src={img} alt='status_logo' />
-        </StyledCardBody>
-      </RowBlockBetween>
+      <StyledCardBody>
+        <Heading scale="sm">
+          Create New Node
+        </Heading>
+        <StyledInput />
+        <StyledButton>Create New Node</StyledButton>
+      </StyledCardBody>
     </StyledCard>
   )
 }
 
-export default WalletCard
+export default NewnodeCard

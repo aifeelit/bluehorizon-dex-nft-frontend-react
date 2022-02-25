@@ -32,6 +32,9 @@ const RowBlockBetween = styled.div`
 
 const Label = styled.div`
   color: ${({ theme }) => theme.colors.textSubtle};
+  font-size: ${props => props.labelSize};
+  margin-bottom: 24px;
+  margin-top: 24px;
 `
 const Actions = styled.div`
   margin-top: 24px;
@@ -40,8 +43,38 @@ const StyledCardBody = styled(CardBody)`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-center;
+  align-items: center;
 `
+
+const StyledButton = styled.button`
+  align-items: center;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  width: 80%;
+  font-family: inherit;
+  font-size: 16px;
+  // font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  background-color: #3a3a3c;
+  color: #faa21a;
+  // line-height: 1;
+  // outline: 0;
+  transition: background-color 0.2s, opacity 0.2s;
+
+  &:hover {
+    opacity: 0.65;
+  }
+
+  &:active {
+    opacity: 0.85;
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+`;
 
 const DEFAULT_TIME_WINDOW: Duration = { weeks: 1 }
 const ONE_HOUR_SECONDS = 3600
@@ -87,11 +120,11 @@ const RewardCard = ({ currentId }) => {
   return (
     <StyledCard>
       <StyledCardBody>
-        <Heading scale="sm" mb="8px">
-          $SNRZ
+        <Heading scale="sm">
+          Available Rewards
         </Heading>
-        <Label>$11.25</Label>
-        IMG
+        <Label labelSize='42px'>12,25 strz</Label>
+        <StyledButton>Claim Rewards</StyledButton>
       </StyledCardBody>
     </StyledCard>
   )

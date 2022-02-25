@@ -74,13 +74,13 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
 
   return (
     <Flex>
-      {/* <MenuButton aria-label="Toggle menu" onClick={togglePush}>
+      <MenuButton aria-label="Toggle menu" onClick={togglePush}>
         {isPushed ? (
           <HamburgerCloseIcon width="24px" color="textSubtle" />
         ) : (
           <HamburgerIcon width="24px" color="textSubtle" />
         )}
-      </MenuButton> */}
+      </MenuButton>
       {isAbsoluteUrl ? (
         <StyledLink to={href} aria-label="FSV Home">
           {innerLogo}

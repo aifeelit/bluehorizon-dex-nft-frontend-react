@@ -12,9 +12,10 @@ import PriceChart from './components/PriceChart'
 import ZapperData from './components/ZapperData'
 import BridgeCard from './components/BridgeCard'
 import RewardCard from './components/RewardCard'
+import NewnodeCard from './components/NewnodeCard'
+import IncomeCard from './components/IncomeCard'
 
 export const nodes = [process.env.REACT_APP_NODE]
-
 export const BSCnodes = [process.env.REACT_APP_BSCNODE]
 
 const Hero = styled.div`
@@ -54,27 +55,26 @@ const Cards = styled(BaseLayout)`
     }
   }
 `
-const BigCards = styled(BaseLayout)`
-  align-items: stretch;
-  justify-content: stretch;
-  margin-bottom: 24px;
-  grid-gap: 24px;
-
-  & > div {
-    grid-column: span 12;
-    width: 100%;
+const CustomCards = styled(Cards)`
+  ${({ theme }) => theme.mediaQueries.sm} {
+    & > div {
+      grid-column: span 6;
+    }
   }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    & > div {
+      grid-column: span 6;
+    }
+  }
+`
 
+const BigCards = styled(Cards)`
   ${({ theme }) => theme.mediaQueries.sm} {
     & > div {
       grid-column: span 12;
     }
   }
-
   ${({ theme }) => theme.mediaQueries.lg} {
-    margin-bottom: 32px;
-    grid-gap: 32px;
-
     & > div {
       grid-column: span 6;
     }
@@ -117,20 +117,22 @@ const Home: React.FC = () => {
       <Page>
         <div>
           <Cards>
-            <WalletCard currentId={currentId} />
-            <WalletCard currentId={currentId} />
-            <WalletCard currentId={currentId} />
-            <WalletCard currentId={currentId} />
-            {/* <Tokenomics currentId={currentId} /> */}
+            <WalletCard title="$STRZ" val1="$11.25" val2="+55%" img='images/newlogo-mobile.png' />
+            <WalletCard title="Total Star Nodes" val1="6500" val2="+5%" img="sldkfj" />
+            <WalletCard title="Your Total Claimed $STRZ" val1="3587" img="sldkfj" />
+            <WalletCard title="Remaining time for new node creations" val1="2d 20h 33m" img="sldkfj" />
           </Cards>
-          <RewardCard />
+          <BigCards>
+            <IncomeCard currentId={currentId} />
+            <CustomCards>
+              <RewardCard />
+              <NewnodeCard />
+            </CustomCards>
+          </BigCards>
           <BigCards>
             <ZapperData currentId={currentId} />
             <PriceChart />
           </BigCards>
-          {/* <Cards>
-            <BridgeCard currentId={currentId} />
-          </Cards> */}
         </div>
       </Page>
     </>

@@ -46,7 +46,7 @@ const StyledCardBody = styled(CardBody)`
 const DEFAULT_TIME_WINDOW: Duration = { weeks: 1 }
 const ONE_HOUR_SECONDS = 3600
 
-const WalletCard = ({ title, val1, val2, img }) => {
+const IncomeCard = ({ currentId }) => {
   const { account } = useWeb3React()
   const { currentNetId } = useSelector((state: State) => ({
     currentNetId: state.info.currentNetId,
@@ -88,20 +88,20 @@ const WalletCard = ({ title, val1, val2, img }) => {
     <StyledCard>
       <RowBlockBetween>
         <StyledCardBody>
-          <Heading scale="sm" mb="8px">
-            {title}
-          </Heading>
-          <RowBlock>
-            <Label>{val1}</Label>
-            <Label>{val2}</Label>
-          </RowBlock>
+          IMG
         </StyledCardBody>
         <StyledCardBody>
-          <img src={img} alt='status_logo' />
+          <Heading scale="sm" mb="8px">
+            $SNRZ
+          </Heading>
+          <RowBlock>
+            <Label>$11.25</Label>
+            <Label>+55%</Label>
+          </RowBlock>
         </StyledCardBody>
       </RowBlockBetween>
     </StyledCard>
   )
 }
 
-export default WalletCard
+export default IncomeCard
