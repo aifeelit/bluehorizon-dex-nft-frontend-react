@@ -23,10 +23,10 @@ const Actions = styled.div`
   margin-top: 24px;
 `
 const StyledCardBody = styled(CardBody)`
-  height: 100%;
+  // height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between
 `
 
 const DEFAULT_TIME_WINDOW: Duration = { weeks: 1 }
@@ -43,8 +43,8 @@ const PriceChart = () => {
   const currentDate = format(new Date(), 'MMM d, yyyy')
 
   const getLatestValueDisplay = () => {
-    let valueToDisplay =null
-    if(priceData) valueToDisplay = formatAmount(priceData[priceData.length-1].open)
+    let valueToDisplay = null
+    if (priceData) valueToDisplay = formatAmount(priceData[priceData.length - 1].open)
     // if (hoverValue) {
     //   valueToDisplay = formatAmount(hoverValue)
     // }
@@ -61,17 +61,21 @@ const PriceChart = () => {
   return (
     <StyledCard>
       <StyledCardBody>
-        <Heading scale='lg' mb='24px'>Price Chart</Heading>
+        <div>
+          <Heading scale='lg' mb='4px'>Price Chart</Heading>
+          <Label>SMN/USD</Label>
+        </div>
         <Flex flexDirection="column" px="24px">
-          {getLatestValueDisplay()}
+          {/* {getLatestValueDisplay()} */}
+          $75.03
           <Text small color="textSubtle">
             {hoverDate || currentDate}
           </Text>
         </Flex>
-        <Box px="24px" height='250px'>
-          <CandleChart data={priceData} setValue={setHoverValue} setLabel={setHoverDate} />
-        </Box>
       </StyledCardBody>
+      {/* <Box px="24px" height='250px'>
+        <CandleChart data={priceData} setValue={setHoverValue} setLabel={setHoverDate} />
+      </Box> */}
     </StyledCard>
   )
 }

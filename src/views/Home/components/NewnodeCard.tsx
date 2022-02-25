@@ -16,7 +16,7 @@ import CardBusdValue from 'components/CardBusdValue'
 import { State } from '../../../state/types'
 
 const StyledCard = styled(Card)`
-  min-height: 60px;
+  min-height: 200px;
 `
 
 const RowBlock = styled.div`

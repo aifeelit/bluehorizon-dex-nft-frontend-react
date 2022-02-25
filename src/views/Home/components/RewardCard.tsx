@@ -16,7 +16,7 @@ import CardBusdValue from 'components/CardBusdValue'
 import { State } from '../../../state/types'
 
 const StyledCard = styled(Card)`
-  min-height: 60px;
+  min-height: 200px;
 `
 
 const RowBlock = styled.div`
@@ -123,7 +123,7 @@ const RewardCard = ({ currentId }) => {
         <Heading scale="sm">
           Available Rewards
         </Heading>
-        <Label labelSize='42px'>12,25 strz</Label>
+        <Label labelSize='42px'>12,25 SMN</Label>
         <StyledButton>Claim Rewards</StyledButton>
       </StyledCardBody>
     </StyledCard>

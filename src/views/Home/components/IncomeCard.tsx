@@ -16,7 +16,7 @@ import CardBusdValue from 'components/CardBusdValue'
 import { State } from '../../../state/types'
 
 const StyledCard = styled(Card)`
-  min-height: 60px;
+  height: 200px;
 `
 
 const RowBlock = styled.div`
@@ -27,27 +27,28 @@ const RowBlock = styled.div`
 const RowBlockBetween = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  // justify-content: space-between;
+  align-items: center;
 `
 
 const Label = styled.div`
   color: ${({ theme }) => theme.colors.textSubtle};
-`
-const Actions = styled.div`
+  font-size: ${props => props.labelSize};
+  margin-bottom: 24px;
   margin-top: 24px;
 `
 const StyledCardBody = styled(CardBody)`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 `
 const StyledImg = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 160px;
+  height: 160px;
   border-radius: 10px;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-left: 20px;
 `
 
 const DEFAULT_TIME_WINDOW: Duration = { weeks: 1 }
@@ -94,15 +95,15 @@ const IncomeCard = ({ img }) => {
   return (
     <StyledCard>
       <RowBlockBetween>
-        <StyledImg src={img} alt='status_logo'/>
+        <StyledImg src={img} alt='status_logo' />
         <StyledCardBody>
-          <Heading scale="sm" mb="8px">
-            $SNRZ
+          <Heading scale="sm">
+            Your Monthly Passive Income
           </Heading>
-          <RowBlock>
-            <Label>$11.25</Label>
-            <Label>+55%</Label>
-          </RowBlock>
+          <Label labelSize='42px'>$1432</Label>
+          <Heading scale="sm">
+            Based on 15nodes & 350SMN
+          </Heading>
         </StyledCardBody>
       </RowBlockBetween>
     </StyledCard>
