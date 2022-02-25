@@ -11,6 +11,7 @@ import Tokenomics from './components/Tokenomics'
 import PriceChart from './components/PriceChart'
 import ZapperData from './components/ZapperData'
 import BridgeCard from './components/BridgeCard'
+import RewardCard from './components/RewardCard'
 
 export const nodes = [process.env.REACT_APP_NODE]
 
@@ -34,13 +35,39 @@ const Cards = styled(BaseLayout)`
   grid-gap: 24px;
 
   & > div {
-    grid-column: span 6;
+    grid-column: span 12;
     width: 100%;
   }
 
   ${({ theme }) => theme.mediaQueries.sm} {
     & > div {
-      grid-column: span 8;
+      grid-column: span 6;
+    }
+  }
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    margin-bottom: 32px;
+    grid-gap: 32px;
+
+    & > div {
+      grid-column: span 3;
+    }
+  }
+`
+const BigCards = styled(BaseLayout)`
+  align-items: stretch;
+  justify-content: stretch;
+  margin-bottom: 24px;
+  grid-gap: 24px;
+
+  & > div {
+    grid-column: span 12;
+    width: 100%;
+  }
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    & > div {
+      grid-column: span 12;
     }
   }
 
@@ -53,7 +80,6 @@ const Cards = styled(BaseLayout)`
     }
   }
 `
-
 const StyledButton = styled(Button)`
   min-width: 120px;  
   &:active {
@@ -92,12 +118,16 @@ const Home: React.FC = () => {
         <div>
           <Cards>
             <WalletCard currentId={currentId} />
-            <Tokenomics currentId={currentId} />
+            <WalletCard currentId={currentId} />
+            <WalletCard currentId={currentId} />
+            <WalletCard currentId={currentId} />
+            {/* <Tokenomics currentId={currentId} /> */}
           </Cards>
-          <Cards>
+          <RewardCard />
+          <BigCards>
             <ZapperData currentId={currentId} />
             <PriceChart />
-          </Cards>
+          </BigCards>
           {/* <Cards>
             <BridgeCard currentId={currentId} />
           </Cards> */}

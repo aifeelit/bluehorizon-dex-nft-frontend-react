@@ -3,6 +3,10 @@ import Text from "../Text/Text";
 import { tags, scales, HeadingProps } from "./types";
 
 const style = {
+  [scales.SM]: {
+    fontSize: "16px",
+    fontSizeLg: "16px",
+  },
   [scales.MD]: {
     fontSize: "20px",
     fontSizeLg: "20px",
@@ -22,12 +26,12 @@ const style = {
 };
 
 const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
-  font-size: ${({ scale }) => style[scale || scales.MD].fontSize};
+  font-size: ${({ scale }) => style[scale || scales.SM].fontSize};
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    font-size: ${({ scale }) => style[scale || scales.MD].fontSizeLg};
+    font-size: ${({ scale }) => style[scale || scales.SM].fontSizeLg};
   }
 `;
 

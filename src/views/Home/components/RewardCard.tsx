@@ -40,13 +40,13 @@ const StyledCardBody = styled(CardBody)`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-center;
 `
 
 const DEFAULT_TIME_WINDOW: Duration = { weeks: 1 }
 const ONE_HOUR_SECONDS = 3600
 
-const WalletCard = ({ currentId }) => {
+const RewardCard = ({ currentId }) => {
   const { account } = useWeb3React()
   const { currentNetId } = useSelector((state: State) => ({
     currentNetId: state.info.currentNetId,
@@ -86,22 +86,15 @@ const WalletCard = ({ currentId }) => {
 
   return (
     <StyledCard>
-      <RowBlockBetween>
-        <StyledCardBody>
-          <Heading scale="sm" mb="8px">
-            $SNRZ
-          </Heading>
-          <RowBlock>
-            <Label>$11.25</Label>
-            <Label>+55%</Label>
-          </RowBlock>
-        </StyledCardBody>
-        <StyledCardBody>
-          IMG
-        </StyledCardBody>
-      </RowBlockBetween>
+      <StyledCardBody>
+        <Heading scale="sm" mb="8px">
+          $SNRZ
+        </Heading>
+        <Label>$11.25</Label>
+        IMG
+      </StyledCardBody>
     </StyledCard>
   )
 }
 
-export default WalletCard
+export default RewardCard
