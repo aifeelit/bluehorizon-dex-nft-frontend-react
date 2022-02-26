@@ -14,6 +14,7 @@ import BridgeCard from './components/BridgeCard'
 import RewardCard from './components/RewardCard'
 import NewnodeCard from './components/NewnodeCard'
 import IncomeCard from './components/IncomeCard'
+import ToogleCard from './components/ToogleCard'
 
 export const nodes = [process.env.REACT_APP_NODE]
 export const BSCnodes = [process.env.REACT_APP_BSCNODE]
@@ -42,6 +43,11 @@ const Cards = styled(BaseLayout)`
 
   ${({ theme }) => theme.mediaQueries.sm} {
     & > div {
+      grid-column: span 3;
+    }
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    & > div {
       grid-column: span 6;
     }
   }
@@ -57,6 +63,11 @@ const Cards = styled(BaseLayout)`
 `
 const CustomCards = styled(Cards)`
   ${({ theme }) => theme.mediaQueries.sm} {
+    & > div {
+      grid-column: span 6;
+    }
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
     & > div {
       grid-column: span 6;
     }
@@ -120,7 +131,8 @@ const Home: React.FC = () => {
             <WalletCard title="$SMN" val1="$11.25" val2={55} img='images/status1.jpg' />
             <WalletCard title="Total Smart Nodes" val1="6500" val2={-5} img='images/status2.jpg' />
             <WalletCard title="Your Total Claimed $SMN" val1="3587" val2={null} img='images/status3.jpg' />
-            <WalletCard title="Remaining time for new node creation" val1="2d 20h 33m" val2={null} img='images/status4.jpg' />
+            {/* <WalletCard title="Remaining time for new node creation" val1="2d 20h 33m" val2={null} img='images/status4.jpg' /> */}
+            <ToogleCard title="Auto Compound" status={true} img1='images/status4.jpg' img2='images/status42.jpg'/>
           </Cards>
           <BigCards>
             <IncomeCard img='images/income.jpg' />
@@ -130,7 +142,7 @@ const Home: React.FC = () => {
             </CustomCards>
           </BigCards>
           <BigCards>
-            <ZapperData currentId={currentId} />
+            <ZapperData />
             <PriceChart />
           </BigCards>
         </div>

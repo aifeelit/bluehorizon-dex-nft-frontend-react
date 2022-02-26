@@ -8,5 +8,5 @@ export interface TabMenuProps {
 export interface TabProps extends ColorProps {
   isActive?: boolean;
   onClick?: () => void;
-  scale?: "md" | "lg";
+  scale?: "sm" | "md" | "lg";
 }

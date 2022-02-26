@@ -132,7 +132,7 @@ const NewnodeCard = () => {
         <Heading scale="sm">
           Create New Node
         </Heading>
-        <StyledInput />
+        <StyledInput placeholder=' Input node name'/>
         <StyledButton>Create New Node</StyledButton>
       </StyledCardBody>
     </StyledCard>

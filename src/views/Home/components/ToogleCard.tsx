@@ -14,14 +14,17 @@ import contracts from 'config/contracts'
 import { formatAmount } from 'utils/formatInforNumbers'
 import CardBusdValue from 'components/CardBusdValue'
 import { State } from '../../../state/types'
+import ToggleButtonAC from './ToggleButtonAC'
 
 const StyledCard = styled(Card)`
-  height: 200px;
+  // min-height: 60px;
 `
 
 const RowBlock = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
+  gap: 8px;
 `
 
 const RowBlockBetween = styled.div`
@@ -29,38 +32,40 @@ const RowBlockBetween = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 `
-
-const Label = styled.div<{labelSize: string}>`
+const StyledImg = styled.img`
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+`
+const Label = styled.div<{ size: string }>`
   color: ${({ theme }) => theme.colors.textSubtle};
-  font-size: ${(p) => p.labelSize};
-  margin-bottom: 24px;
+  font-size: ${props => props.size};
+`
+const PlusLabel = styled.div<{ size: string, color: any }>`
+  color: ${props => props.color >= 0 ? '#55f6bb' : '#ee4f9f'};
+  font-size: ${props => props.size};
+`
+const Actions = styled.div`
   margin-top: 24px;
 `
 const StyledCardBody = styled(CardBody)`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-const StyledImg = styled.img`
-  width: 160px;
-  height: 160px;
-  border-radius: 10px;
-  // margin-top: 20px;
-  margin-left: 20px;
+  justify-content: space-between;
 `
 
 const DEFAULT_TIME_WINDOW: Duration = { weeks: 1 }
 const ONE_HOUR_SECONDS = 3600
 
-const IncomeCard = ({ img }) => {
+const ToogleCard = ({ title, status, img1, img2 }) => {
   const { account } = useWeb3React()
-  // const { currentNetId } = useSelector((state: State) => ({
-  //   currentNetId: state.info.currentNetId,
-  // }))
+  const { currentNetId } = useSelector((state: State) => ({
+    currentNetId: state.info.currentNetId,
+  }))
   const [ethPrice, setEthPrice] = useState<number>(0)
   const [bnbPrice, setBnbPrice] = useState<number>(0)
   const [fsvPrice, setFsvPrice] = useState<number>(0)
@@ -97,19 +102,16 @@ const IncomeCard = ({ img }) => {
   return (
     <StyledCard>
       <RowBlockBetween>
-        <StyledImg src={img} alt='status_logo' />
         <StyledCardBody>
-          <Heading scale="sm">
-            Your Monthly Passive Income
+          <Heading scale="sm" mb="8px">
+            {title}
           </Heading>
-          <Label labelSize='42px'>$1432</Label>
-          <Heading scale="sm">
-            Based on 15nodes & 350SMN
-          </Heading>
+          <ToggleButtonAC />
         </StyledCardBody>
+        <StyledImg src={status ? img2 : img1} alt='status_logo' />
       </RowBlockBetween>
     </StyledCard>
   )
 }
 
-export default IncomeCard
+export default ToogleCard

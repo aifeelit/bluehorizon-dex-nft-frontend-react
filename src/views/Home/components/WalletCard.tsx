@@ -16,7 +16,7 @@ import CardBusdValue from 'components/CardBusdValue'
 import { State } from '../../../state/types'
 
 const StyledCard = styled(Card)`
-  min-height: 60px;
+  // min-height: 60px;
 `
 
 const RowBlock = styled.div`
@@ -27,6 +27,7 @@ const RowBlock = styled.div`
 `
 
 const RowBlockBetween = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -38,8 +39,8 @@ const StyledImg = styled.img`
   margin-top: 20px;
   margin-right: 20px;
 `
-const Label = styled.div<{ color: string, size: string }>`
-  color: ${props => props.color};
+const Label = styled.div<{ size: string }>`
+  color: ${({ theme }) => theme.colors.textSubtle};
   font-size: ${props => props.size};
 `
 const PlusLabel = styled.div<{ size: string, color: any }>`
@@ -105,7 +106,7 @@ const WalletCard = ({ title, val1, val2, img }) => {
             {title}
           </Heading>
           <RowBlock>
-            <Label color='white' size='20px'>{val1}</Label>
+            <Label size='20px'>{val1}</Label>
             {val2 != null ?
               <PlusLabel color={val2} size='16px'>{val2 >= 0 ? `+${val2}` : val2}%</PlusLabel> : ''
             }

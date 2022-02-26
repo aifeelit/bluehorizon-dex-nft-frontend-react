@@ -29,7 +29,7 @@ const Cards = styled(BaseLayout)`
 
   ${({ theme }) => theme.mediaQueries.sm} {
     & > div {
-      grid-column: span 8;
+      grid-column: span 6;
     }
   }
 
