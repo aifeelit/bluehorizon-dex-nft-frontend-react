@@ -106,7 +106,7 @@ const WalletCard = ({ title, val1, val2, img }) => {
           </Heading>
           <RowBlock>
             <Label color='white' size='20px'>{val1}</Label>
-            {val2 ?
+            {val2 != null ?
               <PlusLabel color={val2} size='16px'>{val2 >= 0 ? `+${val2}` : val2}%</PlusLabel> : ''
             }
           </RowBlock>

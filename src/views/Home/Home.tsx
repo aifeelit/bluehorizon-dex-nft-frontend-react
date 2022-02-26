@@ -119,8 +119,8 @@ const Home: React.FC = () => {
           <Cards>
             <WalletCard title="$SMN" val1="$11.25" val2={55} img='images/status1.jpg' />
             <WalletCard title="Total Smart Nodes" val1="6500" val2={-5} img='images/status2.jpg' />
-            <WalletCard title="Your Total Claimed $SMN" val1="3587" img='images/status3.jpg' />
-            <WalletCard title="Remaining time for new node creation" val1="2d 20h 33m" img='images/status4.jpg' />
+            <WalletCard title="Your Total Claimed $SMN" val1="3587" val2={null} img='images/status3.jpg' />
+            <WalletCard title="Remaining time for new node creation" val1="2d 20h 33m" val2={null} img='images/status4.jpg' />
           </Cards>
           <BigCards>
             <IncomeCard img='images/income.jpg' />

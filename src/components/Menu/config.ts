@@ -3,17 +3,27 @@ import { MenuEntry } from 'uikit'
 const config: () => MenuEntry[] = () => [
   {
     label: 'Dashboard',
-    icon: 'HomeIcon',
+    icon: 'images/home.png',
     href: '/home',
   },
   {
-    label: 'Dashboard2',
-    icon: 'HomeIcon',
+    label: 'Treasury',
+    icon: 'images/whitepaper.png',
     href: '/home',
   },
   {
-    label: 'Dashboard3',
-    icon: 'HomeIcon',
+    label: '?',
+    icon: 'images/home.png',
+    href: '/home',
+  },
+  {
+    label: 'WhitePaper',
+    icon: 'images/whitepaper.png',
+    href: '/home',
+  },
+  {
+    label: 'Tokenomics',
+    icon: 'images/tokenomics.png',
     href: '/home',
   },
 ]
