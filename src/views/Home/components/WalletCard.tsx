@@ -22,6 +22,8 @@ const StyledCard = styled(Card)`
 const RowBlock = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
+  gap: 8px;
 `
 
 const RowBlockBetween = styled.div`
@@ -36,9 +38,13 @@ const StyledImg = styled.img`
   margin-top: 20px;
   margin-right: 20px;
 `
-const Label = styled.div`
-  color: ${props=>props.color};
-  font-size: ${props=>props.size};
+const Label = styled.div<{ color: string, size: string }>`
+  color: ${props => props.color};
+  font-size: ${props => props.size};
+`
+const PlusLabel = styled.div<{ size: string, color: any }>`
+  color: ${props => props.color >= 0 ? '#55f6bb' : '#ee4f9f'};
+  font-size: ${props => props.size};
 `
 const Actions = styled.div`
   margin-top: 24px;
@@ -71,16 +77,16 @@ const WalletCard = ({ title, val1, val2, img }) => {
   const address: string = contracts.fsvETH // Replace it with FSV token address
   const priceData = useTokenPriceData(address.toLowerCase(), ONE_HOUR_SECONDS, DEFAULT_TIME_WINDOW)
 
-  axios
-    .get('https://api.pancakeswap.info/api/v2/tokens/0x2170ed0880ac9a755fd29b2688956bd959f933f8')
-    .then(({ data }) => {
-      setEthPrice(data.data.price)
-    })
-  axios
-    .get('https://api.pancakeswap.info/api/v2/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c')
-    .then(({ data }) => {
-      setBnbPrice(data.data.price)
-    })
+  // axios
+  //   .get('https://api.pancakeswap.info/api/v2/tokens/0x2170ed0880ac9a755fd29b2688956bd959f933f8')
+  //   .then(({ data }) => {
+  //     setEthPrice(data.data.price)
+  //   })
+  // axios
+  //   .get('https://api.pancakeswap.info/api/v2/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c')
+  //   .then(({ data }) => {
+  //     setBnbPrice(data.data.price)
+  //   })
 
   useEffect(() => {
     const getLatestValueDisplay = () => {
@@ -100,11 +106,13 @@ const WalletCard = ({ title, val1, val2, img }) => {
           </Heading>
           <RowBlock>
             <Label color='white' size='20px'>{val1}</Label>
-            <Label color='#16d2e6' size='16px'>{val2}</Label>
+            {val2 ?
+              <PlusLabel color={val2} size='16px'>{val2 >= 0 ? `+${val2}` : val2}%</PlusLabel> : ''
+            }
           </RowBlock>
         </StyledCardBody>
         {/* <StyledCardBody> */}
-          <StyledImg src={img} alt='status_logo' />
+        <StyledImg src={img} alt='status_logo' />
         {/* </StyledCardBody> */}
       </RowBlockBetween>
     </StyledCard>

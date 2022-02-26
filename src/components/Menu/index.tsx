@@ -8,6 +8,7 @@ const Menu: React.FC = (props) => {
   const { account } = useWeb3React()
   const { login, logout } = useAuth()
   return (
+    // <div>src-compo-menu-index</div>
     <UikitMenu
       account={account as string | undefined}
       login={login}

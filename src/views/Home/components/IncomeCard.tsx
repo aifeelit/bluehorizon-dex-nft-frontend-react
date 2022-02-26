@@ -31,9 +31,9 @@ const RowBlockBetween = styled.div`
   align-items: center;
 `
 
-const Label = styled.div`
-  color: ${({ theme }) => theme.colors.textSubtle};
-  font-size: ${props => props.labelSize};
+const Label = styled.div<{labelSize: string}>`
+  color: 'white';
+  font-size: ${(p) => p.labelSize};
   margin-bottom: 24px;
   margin-top: 24px;
 `
@@ -56,9 +56,9 @@ const ONE_HOUR_SECONDS = 3600
 
 const IncomeCard = ({ img }) => {
   const { account } = useWeb3React()
-  const { currentNetId } = useSelector((state: State) => ({
-    currentNetId: state.info.currentNetId,
-  }))
+  // const { currentNetId } = useSelector((state: State) => ({
+  //   currentNetId: state.info.currentNetId,
+  // }))
   const [ethPrice, setEthPrice] = useState<number>(0)
   const [bnbPrice, setBnbPrice] = useState<number>(0)
   const [fsvPrice, setFsvPrice] = useState<number>(0)
@@ -72,16 +72,16 @@ const IncomeCard = ({ img }) => {
   const address: string = contracts.fsvETH // Replace it with FSV token address
   const priceData = useTokenPriceData(address.toLowerCase(), ONE_HOUR_SECONDS, DEFAULT_TIME_WINDOW)
 
-  axios
-    .get('https://api.pancakeswap.info/api/v2/tokens/0x2170ed0880ac9a755fd29b2688956bd959f933f8')
-    .then(({ data }) => {
-      setEthPrice(data.data.price)
-    })
-  axios
-    .get('https://api.pancakeswap.info/api/v2/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c')
-    .then(({ data }) => {
-      setBnbPrice(data.data.price)
-    })
+  // axios
+  //   .get('https://api.pancakeswap.info/api/v2/tokens/0x2170ed0880ac9a755fd29b2688956bd959f933f8')
+  //   .then(({ data }) => {
+  //     setEthPrice(data.data.price)
+  //   })
+  // axios
+  //   .get('https://api.pancakeswap.info/api/v2/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c')
+  //   .then(({ data }) => {
+  //     setBnbPrice(data.data.price)
+  //   })
 
   useEffect(() => {
     const getLatestValueDisplay = () => {

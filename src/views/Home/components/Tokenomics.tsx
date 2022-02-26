@@ -39,33 +39,32 @@ const Tokenomics = ({currentId}) => {
     currentNetId: state.info.currentNetId,
   }))
 
-  useEffect(() => {
-    axios
-      .get(`https://api.ethplorer.io/getTokenInfo/0x643239d5d7f05ed6d268c371abf5ef694bc64e5f?apiKey=freekey`)
-      .then((res) => {
-        console.info('resether',res);
-        if (res.data && res.data.holdersCount) {
-          setHolders(res.data.holdersCount)
-        }
-      })
-      .catch((err) => {
-        console.error('axios fetch error:', err.data)
-      })
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://api.ethplorer.io/getTokenInfo/0x643239d5d7f05ed6d268c371abf5ef694bc64e5f?apiKey=freekey`)
+  //     .then((res) => {
+  //       console.info('resether',res);
+  //       if (res.data && res.data.holdersCount) {
+  //         setHolders(res.data.holdersCount)
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.error('axios fetch error:', err.data)
+  //     })
 
-    axios
-      .get(`https://api.covalenthq.com/v1/56/tokens/0xaB8e4649F746dD76F53ee6687072CE10EfdFd427/token_holders/?key=ckey_docs`)
-      .then((res) => {
-        console.info('res', res);
-        if (res.data && res.data.data.items) {
-          setHolders(res.data.data.items.length)
-        }
-      })
-      .catch((err) => {
-        console.error('axios fetch error:', err.data)
-      })
+  //   axios
+  //     .get(`https://api.covalenthq.com/v1/56/tokens/0xaB8e4649F746dD76F53ee6687072CE10EfdFd427/token_holders/?key=ckey_docs`)
+  //     .then((res) => {
+  //       console.info('res', res);
+  //       if (res.data && res.data.data.items) {
+  //         setHolders(res.data.data.items.length)
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.error('axios fetch error:', err.data)
+  //     })
+  // }, [])
 
-
-  }, [])
   return (
     <StyledCard>
       <StyledCardBody>

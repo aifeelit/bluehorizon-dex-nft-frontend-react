@@ -7,12 +7,12 @@ const config: () => MenuEntry[] = () => [
     href: '/home',
   },
   {
-    label: 'Dashboard',
+    label: 'Dashboard2',
     icon: 'HomeIcon',
     href: '/home',
   },
   {
-    label: 'Dashboard',
+    label: 'Dashboard3',
     icon: 'HomeIcon',
     href: '/home',
   },
