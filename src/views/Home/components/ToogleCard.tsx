@@ -66,6 +66,7 @@ const ToogleCard = ({ title, status, img1, img2 }) => {
   const { currentNetId } = useSelector((state: State) => ({
     currentNetId: state.info.currentNetId,
   }))
+  const [isOn, SetisOn] = useState(status)
   const [ethPrice, setEthPrice] = useState<number>(0)
   const [bnbPrice, setBnbPrice] = useState<number>(0)
   const [fsvPrice, setFsvPrice] = useState<number>(0)
@@ -106,9 +107,9 @@ const ToogleCard = ({ title, status, img1, img2 }) => {
           <Heading scale="sm" mb="8px">
             {title}
           </Heading>
-          <ToggleButtonAC />
+          <ToggleButtonAC onClick={() => SetisOn(!isOn)} />
         </StyledCardBody>
-        <StyledImg src={status ? img2 : img1} alt='status_logo' />
+        <StyledImg src={isOn ? img2 : img1} alt='status_logo' />
       </RowBlockBetween>
     </StyledCard>
   )
