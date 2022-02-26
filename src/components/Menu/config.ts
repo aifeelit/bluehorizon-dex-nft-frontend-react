@@ -6,6 +6,16 @@ const config: () => MenuEntry[] = () => [
     icon: 'HomeIcon',
     href: '/home',
   },
+  {
+    label: 'Dashboard',
+    icon: 'HomeIcon',
+    href: '/home',
+  },
+  {
+    label: 'Dashboard',
+    icon: 'HomeIcon',
+    href: '/home',
+  },
 ]
 
 export default config

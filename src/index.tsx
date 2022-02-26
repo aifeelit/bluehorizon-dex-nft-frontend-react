@@ -5,15 +5,10 @@ import Providers from './Providers'
 
 
 ReactDOM.render(
-  // <React.StrictMode>
-  //     <Providers>
-  //       <App />
-  //     </Providers>
-  // </React.StrictMode>,
-  <div>
-    <Providers>
-      <App />
-    </Providers>
-  </div>,
+  <React.StrictMode>
+      <Providers>
+        <App />
+      </Providers>
+  </React.StrictMode>,
   document.getElementById('root'),
 )

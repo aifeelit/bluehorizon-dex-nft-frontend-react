@@ -37,7 +37,8 @@ const StyledImg = styled.img`
   margin-right: 20px;
 `
 const Label = styled.div`
-  color: ${({ theme }) => theme.colors.textSubtle};
+  color: ${props=>props.color};
+  font-size: ${props=>props.size};
 `
 const Actions = styled.div`
   margin-top: 24px;
@@ -98,8 +99,8 @@ const WalletCard = ({ title, val1, val2, img }) => {
             {title}
           </Heading>
           <RowBlock>
-            <Label>{val1}</Label>
-            <Label>{val2}</Label>
+            <Label color='white' size='20px'>{val1}</Label>
+            <Label color='#16d2e6' size='16px'>{val2}</Label>
           </RowBlock>
         </StyledCardBody>
         {/* <StyledCardBody> */}
