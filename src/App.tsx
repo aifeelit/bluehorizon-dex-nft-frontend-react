@@ -6,6 +6,7 @@ import NotFound from 'views/NotFound'
 import GlobalStyle from './style/Global'
 import useEagerConnect from './hooks/useEagerConnect'
 import Menu from './components/Menu'
+import Swap from './views/Swap'
 import history from './routerHistory'
 // const NotFound = lazy(() => import('./views/NotFound'))
 // const Home = lazy(() => import('./views/Home'))
@@ -22,10 +23,12 @@ const App: React.FC = () => {
           <Route path="/home" exact>
             <Home />
           </Route>
+          <Route exact path="/swap">
+            <Swap/>
+          </Route>
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
-
           {/* 404 */}
           <Route component={NotFound} />
         </Switch>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Heading, Text, BaseLayout, Button } from 'uikit'
 import { Flex } from 'uikit/components/Box'
+import { Heading, Text, BaseLayout, Button } from 'uikit'
 import Page from 'components/Layout/Page'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { simpleRpcProvider, BSCProvider } from 'utils/provider'
