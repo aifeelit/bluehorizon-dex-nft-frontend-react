@@ -85,6 +85,7 @@ const BigCards = styled(Cards)`
       grid-column: span 12;
     }
   }
+
   ${({ theme }) => theme.mediaQueries.lg} {
     & > div {
       grid-column: span 6;
