@@ -393,16 +393,14 @@ export default function Swap({ history }: RouteComponentProps) {
               </AutoColumn>
             )}
           </AutoColumn>
-
-          {/* box-------------tag */}
-
         </Wrapper>
       </AppBody>
+{/*       
       {!swapIsUnsupported ? (
         <AdvancedSwapDetailsDropdown trade={trade} />
       ) : (
         <UnsupportedCurrencyFooter currencies={[currencies.INPUT, currencies.OUTPUT]} />
-      )}
+      )} */}
     </Page>
   )
 }

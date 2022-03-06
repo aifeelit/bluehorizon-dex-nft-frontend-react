@@ -37,7 +37,7 @@ const StyledPage = styled.div`
 const Page: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ children, ...props }) => {
   return (
     <StyledPage {...props}>
-      <SubNav />
+      {/* <SubNav /> */}
       {children}
       {/* <Flex flexGrow={1} /> */}
       {/* <Footer /> */}

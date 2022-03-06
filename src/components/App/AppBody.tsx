@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Card } from 'toolkit/uikit'
 
 export const BodyWrapper = styled(Card)`
+  margin-top: 50px;
   border-radius: 16px;
   max-width: 450px;
   padding: 10px;

@@ -14,6 +14,7 @@ import LotteryBanner from 'views/Home/components/LotteryBanner'
 import useFetchLotteryForPromos from 'views/Home/hooks/useFetchLotteryForPromos'
 
 import WalletCard from './components/WalletCard'
+import ToogleCard from './components/ToogleCard'
 
 const Hero = styled.div`
   align-items: center;
@@ -36,7 +37,7 @@ const Hero = styled.div`
   }
 `
 
-const Cards_Origin = styled(BaseLayout)`
+const CardsOrigin = styled(BaseLayout)`
   align-items: stretch;
   justify-content: stretch;
   margin-bottom: 24px;
@@ -156,7 +157,12 @@ const Home: React.FC = () => {
     <>
       {/* <LotteryBanner currentLotteryPrize={currentLotteryPrize} /> */}
       <Page>
-        <WalletCard title="$SMN" val1="$11.25" val2={55} img='images/status1.jpg' />
+        <Cards>
+          <WalletCard title="$SMN" val1="$11.25" val2={55} img='images/status1.jpg' />
+          <WalletCard title="Total Smart Nodes" val1="6500" val2={-5} img='images/status2.jpg' />
+          <WalletCard title="Your Total Claimed $SMN" val1="3587" val2={null} img='images/status3.jpg' />
+          <ToogleCard title="Auto Compound" status={false} img1='images/status4.jpg' img2='images/status42.jpg' />
+        </Cards>
         {/* <Hero>
           <Heading as="h1" scale="xl" mb="24px" color="secondary">
             {t('PancakeSwap')}
