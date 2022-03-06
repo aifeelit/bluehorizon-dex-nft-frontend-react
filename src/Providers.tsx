@@ -1,15 +1,19 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { ThemeProvider } from "styled-components";
-import { Web3ReactProvider } from "@web3-react/core";
-import { light, ModalProvider } from "uikit";
-import { getLibrary } from "./utils/web3React";
-import { ToastsProvider } from "./contexts/ToastsContext";
-import { RefreshContextProvider } from './contexts/RefreshContext'
-import store from "./state";
+import React from 'react'
+import { ModalProvider, light, dark } from 'toolkit/uikit'
+import { Web3ReactProvider } from '@web3-react/core'
+import { HelmetProvider } from 'react-helmet-async'
+import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
+import { useThemeManager } from 'state/user/hooks'
+import { getLibrary } from 'utils/web3React'
+import { LanguageProvider } from 'contexts/Localization'
+import { RefreshContextProvider } from 'contexts/RefreshContext'
+import { ToastsProvider } from 'contexts/ToastsContext'
+import store from 'state'
 
-const ThemeProviderWrapper = (props: any) => {
-  return <ThemeProvider theme={light} {...props} />
+const ThemeProviderWrapper = (props) => {
+  const [isDark] = useThemeManager()
+  return <ThemeProvider theme={isDark ? dark : light} {...props} />
 }
 
 const Providers: React.FC = ({ children }) => {
@@ -17,13 +21,15 @@ const Providers: React.FC = ({ children }) => {
     <Web3ReactProvider getLibrary={getLibrary}>
       <Provider store={store}>
         <ToastsProvider>
-          <ThemeProviderWrapper>
-            <ModalProvider>
-              <RefreshContextProvider>
-                {children}
-              </RefreshContextProvider>
-            </ModalProvider>
-          </ThemeProviderWrapper>
+          <HelmetProvider>
+            <ThemeProviderWrapper>
+              <LanguageProvider>
+                <RefreshContextProvider>
+                  <ModalProvider>{children}</ModalProvider>
+                </RefreshContextProvider>
+              </LanguageProvider>
+            </ThemeProviderWrapper>
+          </HelmetProvider>
         </ToastsProvider>
       </Provider>
     </Web3ReactProvider>

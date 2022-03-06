@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Osiris';
+  src: local('Osiris'), url(/fonts/Osiris.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url(/fonts/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'RobotoRegular';
+  src: local('RobotoRegular'), url(/fonts/Roboto-Regular.ttf) format('truetype');
+}

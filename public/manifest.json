@@ -1,23 +1,23 @@
 {
-  "short_name": "SMART NODES",
-  "name": "Smart Nodes Finanace",
-  "description": "The Best Trading Option.",
-  "homepage_url": "https://.finance",
+  "short_name": "BlueHorizon",
+  "name": "BlueHorizon",
+  "description": "Best De-Fi and NFT App",
+  "homepage_url": "https://bluehorizon.finance",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#15181E",
+  "theme_color": "#072039",
   "background_color": "#ffffff",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "sn_logo.ico",
+      "src": "favicon.ico",
       "type": "image/x-icon",
-      "sizes": "128x128"
+      "sizes": "32x32"
     },
     {
       "src": "logo.png",
       "type": "image/png",
-      "sizes": "121x121"
+      "sizes": "512x512"
     }
   ]
 }

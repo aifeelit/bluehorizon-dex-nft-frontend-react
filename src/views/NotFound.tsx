@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Heading, Text, LogoIcon } from 'uikit'
+import { Button, Heading, Text, LogoIcon } from 'toolkit/uikit'
 import Page from 'components/Layout/Page'
+import { useTranslation } from 'contexts/Localization'
 
 const StyledNotFound = styled.div`
   align-items: center;
@@ -12,14 +13,16 @@ const StyledNotFound = styled.div`
 `
 
 const NotFound = () => {
+  const { t } = useTranslation()
+
   return (
     <Page>
       <StyledNotFound>
-        <Heading scale="xxl" mb="20px">Oops.. 404 error Page not found</Heading>
-        {/* <Heading scale="xxl">404</Heading>
-        <Text mb="16px">{t('Oops, page not found.')}</Text> */}
+        <LogoIcon width="64px" mb="8px" />
+        <Heading scale="xxl">404</Heading>
+        <Text mb="16px">{t('Oops, page not found.')}</Text>
         <Button as="a" href="/" scale="sm">
-          Back Home
+          {t('Back Home')}
         </Button>
       </StyledNotFound>
     </Page>

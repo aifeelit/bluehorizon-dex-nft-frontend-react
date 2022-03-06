@@ -1,6 +1,6 @@
 // Set of helper functions to facilitate wallet setup
-
-import { BASE_SCAN_URL, BASE_NATIVE_CURRENY_DECIMAL, BASE_NATIVE_CURRENY_NAME, BASE_NATIVE_CURRENY_SYMBOL } from "../config";
+import { ChainId } from 'toolkit/sdk'
+import { BASE_URL, BASE_BSC_SCAN_URLS } from 'config'
 import { nodes } from './getRpcUrl'
 
 /**
@@ -13,10 +13,18 @@ export const setupNetwork = async () => {
     const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
     try {
       await provider.request({
-        method: 'wallet_switchEthereumChain',
+        method: 'wallet_addEthereumChain',
         params: [
           {
             chainId: `0x${chainId.toString(16)}`,
+            chainName: chainId === 56 ? 'Binance Smart Chain Mainnet' : chainId === 97? 'Binance Smart Chain Testnet': 'Unsupported Net',
+            nativeCurrency: {
+              name: 'BNB',
+              symbol: 'bnb',
+              decimals: 18,
+            },
+            rpcUrls: nodes,
+            blockExplorerUrls: [`${BASE_BSC_SCAN_URLS[chainId as ChainId]}/`],
           },
         ],
       })
@@ -39,7 +47,6 @@ export const setupNetwork = async () => {
  * @returns {boolean} true if the token has been added, false otherwise
  */
 export const registerToken = async (tokenAddress: string, tokenSymbol: string, tokenDecimals: number) => {
-  // @ts-ignore
   const tokenAdded = await window.ethereum.request({
     method: 'wallet_watchAsset',
     params: {
@@ -48,7 +55,7 @@ export const registerToken = async (tokenAddress: string, tokenSymbol: string, t
         address: tokenAddress,
         symbol: tokenSymbol,
         decimals: tokenDecimals,
-        // image: `${BASE_URL}/images/tokens/${tokenAddress}.png`,
+        image: `${BASE_URL}/images/tokens/${tokenAddress}.png`,
       },
     },
   })

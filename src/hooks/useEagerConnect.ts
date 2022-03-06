@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { connectorLocalStorageKey, ConnectorNames } from "uikit";
-import useAuth from "./useAuth";
+import { connectorLocalStorageKey, ConnectorNames } from 'toolkit/uikit'
+import useAuth from 'hooks/useAuth'
 
 const _binanceChainListener = async () =>
   new Promise<void>((resolve) =>
@@ -18,8 +18,10 @@ const _binanceChainListener = async () =>
 
 const useEagerConnect = () => {
   const { login } = useAuth()
+
   useEffect(() => {
     const connectorId = window.localStorage.getItem(connectorLocalStorageKey) as ConnectorNames
+
     if (connectorId) {
       const isConnectorBinanceChain = connectorId === ConnectorNames.BSC
       const isBinanceChainDefined = Reflect.has(window, 'BinanceChain')

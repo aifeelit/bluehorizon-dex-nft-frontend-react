@@ -1,20 +1,19 @@
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { BscConnector } from '@binance-chain/bsc-connector'
+import { ConnectorNames } from 'toolkit/uikit'
 import { ethers } from 'ethers'
-import { ConnectorNames } from "uikit";
-import {getETHUrl} from './getRpcUrl'
+import getNodeUrl from './getRpcUrl'
 
 const POLLING_INTERVAL = 12000
-const rpcUrl = getETHUrl()
-const chainId = parseInt(process.env.REACT_APP_CHAIN_ID || '1', 10)
-// const chainId = 56||1
+const rpcUrl = getNodeUrl()
+const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
 
-const injected = new InjectedConnector({ supportedChainIds: [1,56] })
+const injected = new InjectedConnector({ supportedChainIds: [chainId] })
 
 const walletconnect = new WalletConnectConnector({
   rpc: { [chainId]: rpcUrl },
-  bridge: 'https://walletconnect.org/',
+  bridge: 'https://pancakeswap.bridge.walletconnect.org/',
   qrcode: true,
   pollingInterval: POLLING_INTERVAL,
 })
@@ -27,7 +26,6 @@ export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
   [ConnectorNames.BSC]: bscConnector,
 }
 
-// @ts-ignore
 export const getLibrary = (provider): ethers.providers.Web3Provider => {
   const library = new ethers.providers.Web3Provider(provider)
   library.pollingInterval = POLLING_INTERVAL
@@ -40,7 +38,6 @@ export const getLibrary = (provider): ethers.providers.Web3Provider => {
  */
 export const signMessage = async (provider: any, account: string, message: string): Promise<string> => {
   if (window.BinanceChain) {
-    // @ts-ignore
     const { signature } = await window.BinanceChain.bnbSign(account, message)
     return signature
   }

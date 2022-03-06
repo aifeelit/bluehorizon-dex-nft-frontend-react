@@ -28,6 +28,7 @@ cypress/fixtures/example.json
 .env.development.local
 .env.test.local
 .env.production.local
+.env.development
 
 # debug
 npm-debug.log*
@@ -35,5 +36,3 @@ yarn-debug.log*
 yarn-error.log*
 debug.log*
 
-# custome
-token-addresses.txt

@@ -1,9 +1,8 @@
 import React, { createContext, ReactNode, useCallback, useState } from 'react'
 import { kebabCase } from 'lodash'
-import { Toast, toastTypes} from "uikit";
+import { Toast, toastTypes } from 'toolkit/uikit'
 import { ToastContextApi } from './types'
 
-// @ts-ignore
 export const ToastsContext = createContext<ToastContextApi>(undefined)
 
 export const ToastsProvider: React.FC = ({ children }) => {

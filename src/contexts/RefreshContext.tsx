@@ -25,7 +25,6 @@ const useIsBrowserTabActive = () => {
 }
 
 // This context maintain 2 counters that can be used as a dependencies on other hooks to force a periodic refresh
-// @ts-ignore
 const RefreshContextProvider = ({ children }) => {
   const [slow, setSlow] = useState(0)
   const [fast, setFast] = useState(0)

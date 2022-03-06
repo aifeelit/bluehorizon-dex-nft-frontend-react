@@ -1,13 +1,10 @@
 import sample from 'lodash/sample'
 
+// Array of available nodes to connect to
 export const nodes = [process.env.REACT_APP_NODE]
 
-export const BSCnodes = [process.env.REACT_APP_BSCNODE]
-
-export const getETHUrl = () => {
+const getNodeUrl = () => {
   return sample(nodes)
 }
-export const getBSCUrl = () => {
-  return sample(BSCnodes)
-}
 
+export default getNodeUrl

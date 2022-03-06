@@ -1,14 +1,16 @@
 import React from 'react'
-import { Button, useWalletModal } from 'uikit'
+import { Button, useWalletModal } from 'toolkit/uikit'
 import useAuth from 'hooks/useAuth'
+import { useTranslation } from 'contexts/Localization'
 
 const ConnectWalletButton = (props) => {
+  const { t } = useTranslation()
   const { login, logout } = useAuth()
   const { onPresentConnectModal } = useWalletModal(login, logout)
 
   return (
-    <Button onClick={onPresentConnectModal} {...props}>
-      Connect Wallet
+    <Button onClick={onPresentConnectModal} {...props} className="osiris">
+      {t('Connect Wallet')}
     </Button>
   )
 }
