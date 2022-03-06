@@ -61,7 +61,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
       // width: theme.spacing(9) + 1
       width: 0,
     },
-    backgroundColor: '#072039',
+    backgroundColor: '#2b2b2b',
     borderRight: '1px solid #243d5c',
   },
   toolbar: {

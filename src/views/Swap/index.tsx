@@ -313,7 +313,7 @@ export default function Swap({ history }: RouteComponentProps) {
         <AppHeader title={t('Exchange')} subtitle={t('Trade tokens in an instant')} />
         <Wrapper id="swap-page">
           <AutoColumn gap="md">
-            {/* <CurrencyInputPanel
+            <CurrencyInputPanel
               label={independentField === Field.OUTPUT && !showWrap && trade ? t('From (estimated)') : t('From')}
               value={formattedAmounts[Field.INPUT]}
               showMaxButton={!atMaxAmountInput}
@@ -323,7 +323,7 @@ export default function Swap({ history }: RouteComponentProps) {
               onCurrencySelect={handleInputSelect}
               otherCurrency={currencies[Field.OUTPUT]}
               id="swap-currency-input"
-            /> */}
+            />
 
             <AutoColumn justify="space-between">
               <AutoRow justify={isExpertMode ? 'space-between' : 'center'} style={{ padding: '0 1rem' }}>
@@ -356,7 +356,7 @@ export default function Swap({ history }: RouteComponentProps) {
               id="swap-currency-output"
             />
 
-            {/* {isExpertMode && recipient !== null && !showWrap ? (
+            {isExpertMode && recipient !== null && !showWrap ? (
               <>
                 <AutoRow justify="space-between" style={{ padding: '0 1rem' }}>
                   <ArrowWrapper clickable={false}>
@@ -391,7 +391,7 @@ export default function Swap({ history }: RouteComponentProps) {
                   </RowBetween>
                 )}
               </AutoColumn>
-            )} */}
+            )}
           </AutoColumn>
 
           {/* box-------------tag */}

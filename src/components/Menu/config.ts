@@ -26,15 +26,25 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     icon: '/images/home/swap.png',
     href: '/swap',
   },
+  // {
+  //   label: t('NFT'),
+  //   icon: '/images/home/nft.png',
+  //   href: '/collectibles',
+  // },
   {
-    label: t('NFT'),
-    icon: '/images/home/nft.png',
-    href: '/collectibles',
+    label: t('Treasury'),
+    icon: '/images/home/farm.png',
+    href: '/Treasury',
   },
   {
-    label: t('Farms'),
+    label: t('Whitepaper'),
     icon: '/images/home/farm.png',
-    href: '/farms',
+    href: '/Whitepaper',
+  },
+  {
+    label: t('Tokenomics'),
+    icon: '/images/home/farm.png',
+    href: '/Tokenomics',
   },
   // {
   //   label: t('Pools'),

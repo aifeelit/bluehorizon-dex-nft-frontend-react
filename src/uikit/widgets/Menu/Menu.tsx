@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import throttle from 'lodash/throttle'
 import { Heading } from 'uikit'
-import { setCurrentNetId } from 'state/info'
+// import { setCurrentNetId } from 'state/info'
 import Overlay from '../../components/Overlay/Overlay'
 import Flex from '../../components/Box/Flex'
 import { useMatchBreakpoints } from '../../hooks'
@@ -122,14 +122,14 @@ const Menu: React.FC<NavProps> = ({
     //     params: [{ chainId: chainid }], // chainId must be in hexadecimal numbers
     //   });
     // }
-    if (chainid === '0x1') {
-      dispatch(setCurrentNetId(1))
-      setCurrentId(1)
-    } else {
-      dispatch(setCurrentNetId(56))
-      setCurrentId(56)
-    }
-    console.info(currentId)
+    // if (chainid === '0x1') {
+    //   dispatch(setCurrentNetId(1))
+    //   setCurrentId(1)
+    // } else {
+    //   dispatch(setCurrentNetId(56))
+    //   setCurrentId(56)
+    // }
+    // console.info(currentId)
   }
 
   useEffect(() => {

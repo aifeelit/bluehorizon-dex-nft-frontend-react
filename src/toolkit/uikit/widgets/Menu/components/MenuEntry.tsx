@@ -35,7 +35,7 @@ const MenuEntry = styled.div<Props>`
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
   font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
   // background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
-  background-image: ${({ isActive, isPushed }) => (isActive ? isPushed? `url('/images/menu_entry_active_background.png')`: `linear-gradient(50deg, #35A0FF,#6A50EA,#812DE1)` : "none")};
+  background-image: ${({ isActive, isPushed }) => (isActive ? isPushed? `url('/images/menu_entry_active_background.png')`: `linear-gradient(50deg,#fed393,#f7941d,#faa21a)` : "none")};
   background-size: 100% 100%;
   color: ${({ theme }) => theme.colors.text};
   // box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
@@ -53,7 +53,7 @@ const MenuEntry = styled.div<Props>`
 
   &:hover {
     // background-color: ${({ theme }) => theme.colors.tertiary};
-    background-image: ${({ isPushed }) => (isPushed? `url('/images/menu_entry_active_background.png')`: `linear-gradient(50deg, #35A0FF,#6A50EA,#812DE1)`)};
+    background-image: ${({ isPushed }) => (isPushed? `url('/images/menu_entry_active_background.png')`: `linear-gradient(50deg,#fed393,#f7941d,#faa21a)`)};
     background-size: 100% 100%;
   }
 

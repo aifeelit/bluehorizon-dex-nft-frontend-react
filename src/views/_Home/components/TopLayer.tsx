@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     height: '300px',
     borderBottom: '1px solid #243d5c',
-    backgroundColor: '#072039',
+    backgroundColor: '#2b2b2b',
     width: '100%',
     [theme.breakpoints.down(400)]: {
       height: '450px',
@@ -143,7 +143,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   activedSlide: {
-    border: '2px solid #35a0ff',
+    border: '2px solid #3a3a3c',
   },
   dot: {
     width: 8,
@@ -152,7 +152,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#294769',
   },
   activedDot: {
-    backgroundColor: '#35a0ff',
+    backgroundColor: '#3a3a3c',
   }
 }));
 

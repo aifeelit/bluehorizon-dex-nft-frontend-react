@@ -387,7 +387,7 @@ const Farms: React.FC = () => {
 
   return (
     <>
-      <PageHeader background="#072039">
+      <PageHeader background="#2b2b2b">
         <Text color="text" fontSize="24px" bold fontFamily="Osiris" mb="10px">
           {t('STAKE TOKENS TO EARN BLUEHORIZON')}
         </Text>

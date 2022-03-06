@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     '&.active, &:hover': {
       backgroundImage: `linear-gradient(23deg,#8593a7 10%, #ffffff 100%);`,
       boxShadow: '0px 0px 3px black',
-      color: '#072039',
+      color: '#2b2b2b',
     },
     display: 'flex',
     padding: '0 16px',
