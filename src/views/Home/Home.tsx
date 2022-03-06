@@ -156,7 +156,7 @@ const Home: React.FC = () => {
     <>
       {/* <LotteryBanner currentLotteryPrize={currentLotteryPrize} /> */}
       <Page>
-
+        <WalletCard title="$SMN" val1="$11.25" val2={55} img='images/status1.jpg' />
         {/* <Hero>
           <Heading as="h1" scale="xl" mb="24px" color="secondary">
             {t('PancakeSwap')}
