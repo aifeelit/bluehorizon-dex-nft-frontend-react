@@ -20,7 +20,7 @@ export const additionalColors = {
 export const lightColors: Colors = {
   ...baseColors,
   ...additionalColors,
-  background: "#3a3a3c",
+  background: "#2b2b2b",
   backgroundDisabled: "#2b2b2b",
   backgroundAlt: "#2b2b2b",
   cardBorder: "#2b2b2b",

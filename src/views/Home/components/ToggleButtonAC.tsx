@@ -37,7 +37,7 @@ const ToggleButtonAC = withStyles((theme) => ({
   track: {
     borderRadius: 26 / 2,
     border: '1px solid #fff',
-    backgroundColor: '#2b2b2b',
+    backgroundColor: '#3a3a3c',
     opacity: 1,
     transition: theme.transitions.create(['background-color', 'border']),
   },

@@ -44,7 +44,7 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
       {!noConfig && (
         <Flex>
           <Settings />
-          <Transactions />
+          {/* <Transactions /> */}
         </Flex>
       )}
     </AppHeaderContainer>

@@ -17,6 +17,7 @@ import LangSelector from './components/LangSelector'
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  background: #3a3a3c;
 `
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
@@ -134,10 +135,10 @@ const Menu: React.FC<NavProps> = ({
         {!!login && !!logout && (
           <Flex alignItems='center'>
             <UserBlock account={account} login={login} logout={logout} />
-            <LanguageWrapper>
+            {/* <LanguageWrapper>
               <LangSelector currentLang={currentLang} langs={langs} setLang={setLang} />
-            </LanguageWrapper>
-            {profile && <Avatar profile={profile} />}
+            </LanguageWrapper> */}
+            {/* {profile && <Avatar profile={profile} />} */}
           </Flex>
         )}
       </StyledNav>
