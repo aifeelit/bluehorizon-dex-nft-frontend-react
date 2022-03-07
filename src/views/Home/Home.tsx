@@ -15,6 +15,9 @@ import useFetchLotteryForPromos from 'views/Home/hooks/useFetchLotteryForPromos'
 
 import WalletCard from './components/WalletCard'
 import ToogleCard from './components/ToogleCard'
+import IncomeCard from './components/IncomeCard'
+import RewardCard from './components/RewardCard'
+import NewnodeCard from './components/NewnodeCard'
 
 const Hero = styled.div`
   align-items: center;
@@ -164,10 +167,10 @@ const Home: React.FC = () => {
           <ToogleCard title="Auto Compound" status={false} img1='images/status4.jpg' img2='images/status42.jpg' />
         </Cards>
         <BigCards>
-            {/* <IncomeCard img='images/income.jpg' /> */}
+            <IncomeCard img='images/income.jpg' />
             <CustomCards>
-              {/* <RewardCard /> */}
-              {/* <NewnodeCard /> */}
+              <RewardCard />
+              <NewnodeCard />
             </CustomCards>
           </BigCards>
           <BigCards>
