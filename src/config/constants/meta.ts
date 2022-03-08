@@ -14,7 +14,7 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
   switch (path) {
     case '/':
       return {
-        title: `${t('Home')} | ${t('BlueHorizon')}`,
+        title: 'SmartNodesFinance',
       }
     // case '/competition':
     //   return {
@@ -66,7 +66,7 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
     //   }
     default:
       return {
-        title: `${t('BlueHorizon')}`,
+        title: `${t('SmartNodesFinance')}`,
       }
   }
 }

@@ -177,7 +177,7 @@ const TopLayer = () => {
                   <div className={classes.box}>
                     <img className={classes.artist} src={HomeArtist} height="100%" alt="artist img" />
                     <div className={classes.topMiddle}>
-                      <div className={classes.topMiddleTitle}>BLUE HORIZON</div>
+                      <div className={classes.topMiddleTitle}>SmartNodesFinance</div>
                       <div>Checkout the new series of NFT.</div>
 
                       <div className={`${classes.middleBtn} card`}>

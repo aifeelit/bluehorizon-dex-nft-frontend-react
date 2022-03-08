@@ -51,12 +51,12 @@ const PriceChart = () => {
 
     // return valueToDisplay ? (
       // <Text fontSize="24px" bold>
-        {/* ${valueToDisplay} */}
-      {/* </Text>
-    ) : (
-      <Skeleton height="36px" width="128px" />
-    )
-  } */}
+        // {/* ${valueToDisplay} */}
+  //     {/* </Text>
+  //   ) : (
+  //     <Skeleton height="36px" width="128px" />
+  //   )
+  // } */}
 
   return (
     <StyledCard>

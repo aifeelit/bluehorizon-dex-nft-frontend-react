@@ -74,7 +74,7 @@ const rows = [
 //     backgroundColor: "yellow",
 //   },
 // });
-export default function NodesList() {
+const NodesList = () => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -88,16 +88,16 @@ export default function NodesList() {
   };
   // const classes = useStyles();
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden', background: '#2b2b2b'}}>
-      <TableContainer sx={{ height: 440 }} >
+    <Paper style={{ width: '100%', overflow: 'hidden', background: '#2b2b2b' }} >
+      <TableContainer style={{ height: 440 }} >
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
-            <TableRow sx={{ background: '#2b2b2b' }}>
+            <TableRow style={{ background: '#2b2b2b' }}>
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }} sx={{ background: '#2b2b2b', color:'#faa21a', fontSize:'16px' }}
+                  style={{ minWidth: column.minWidth, background: '#2b2b2b', color: '#faa21a', fontSize: '16px' }}
                 >
                   {column.label}
                 </TableCell>
@@ -109,11 +109,11 @@ export default function NodesList() {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row, index) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.reward} sx={{ color: 'white' }}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.reward} style={{ color: 'white' }}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align} sx={{ color: 'white' }}>
+                        <TableCell key={column.id} align={column.align} style={{ color: 'white' }}>
                           {column.format && typeof value === 'number'
                             ? column.format(value)
                             : value}
@@ -134,8 +134,10 @@ export default function NodesList() {
         page={page}
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
-        sx={{ color: '#faa21a' }}
+        style={{ color: '#faa21a' }}
       />
-    </Paper>
+    </Paper >
   );
 }
+
+export default NodesList;
