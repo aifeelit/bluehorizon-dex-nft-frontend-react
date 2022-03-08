@@ -11,7 +11,7 @@ import CardValue from 'components/CardValue'
 // import { useFsvBalance, useFsvBNBBalance, useEthBalance, useBNBBalance } from 'state/user/hooks'
 // import { useTokenPriceData } from 'hooks/useInfo'
 import contracts from 'config/contracts'
-import { formatAmount } from 'utils/formatInforNumbers'
+// import { formatAmount } from 'utils/formatInforNumbers'
 // import CardBusdValue from 'components/CardBusdValue'
 import { State } from '../../../state/types'
 

@@ -89,22 +89,23 @@ const DEFAULT_TIME_WINDOW: Duration = { weeks: 1 }
 const ONE_HOUR_SECONDS = 3600
 
 const NewnodeCard = () => {
-  const { account } = useWeb3React()
+  // const { account } = useWeb3React()
   // const { currentNetId } = useSelector((state: State) => ({
   //   currentNetId: state.info.currentNetId,
   // }))
-  const [ethPrice, setEthPrice] = useState<number>(0)
-  const [bnbPrice, setBnbPrice] = useState<number>(0)
-  const [fsvPrice, setFsvPrice] = useState<number>(0)
-  const { chainId } = useActiveWeb3React()
-  const { balance: fsvBalance } = useFsvBalance(account, 'eth')
-  const { balance: fsvBNBBalance } = useFsvBNBBalance(account, 'bsc')
-  const { balance: ethBalance } = useEthBalance(account)
-  const { balance: bnbBalance } = useBNBBalance(account)
-  const [hoverValue, setHoverValue] = useState<number | undefined>()
+  // const [ethPrice, setEthPrice] = useState<number>(0)
+  // const [bnbPrice, setBnbPrice] = useState<number>(0)
+  // const [fsvPrice, setFsvPrice] = useState<number>(0)
+  // const { chainId } = useActiveWeb3React()
+  // const { balance: fsvBalance } = useFsvBalance(account, 'eth')
+  // const { balance: fsvBNBBalance } = useFsvBNBBalance(account, 'bsc')
+  // const { balance: ethBalance } = useEthBalance(account)
+  // const { balance: bnbBalance } = useBNBBalance(account)
+  // const [hoverValue, setHoverValue] = useState<number | undefined>()
 
-  const address: string = contracts.fsvETH // Replace it with FSV token address
-  const priceData = useTokenPriceData(address.toLowerCase(), ONE_HOUR_SECONDS, DEFAULT_TIME_WINDOW)
+  // const address: string = contracts.fsvETH 
+  // Replace it with FSV token address
+  // const priceData = useTokenPriceData(address.toLowerCase(), ONE_HOUR_SECONDS, DEFAULT_TIME_WINDOW)
 
   // axios
   //   .get('https://api.pancakeswap.info/api/v2/tokens/0x2170ed0880ac9a755fd29b2688956bd959f933f8')
@@ -117,14 +118,14 @@ const NewnodeCard = () => {
   //     setBnbPrice(data.data.price)
   //   })
 
-  useEffect(() => {
-    const getLatestValueDisplay = () => {
-      let valueToDisplay = null
-      if (priceData) valueToDisplay = formatAmount(priceData[priceData.length - 1].open)
-      setFsvPrice(valueToDisplay * 1.0)
-    }
-    getLatestValueDisplay()
-  }, [priceData])
+  // useEffect(() => {
+  //   const getLatestValueDisplay = () => {
+  //     let valueToDisplay = null
+  //     if (priceData) valueToDisplay = formatAmount(priceData[priceData.length - 1].open)
+  //     setFsvPrice(valueToDisplay * 1.0)
+  //   }
+  //   getLatestValueDisplay()
+  // }, [priceData])
 
   return (
     <StyledCard>

@@ -18,6 +18,8 @@ import ToogleCard from './components/ToogleCard'
 import IncomeCard from './components/IncomeCard'
 import RewardCard from './components/RewardCard'
 import NewnodeCard from './components/NewnodeCard'
+import PriceChart from './components/PriceChart'
+import ZapperData from './components/ZapperData'
 
 const Hero = styled.div`
   align-items: center;
@@ -174,8 +176,8 @@ const Home: React.FC = () => {
             </CustomCards>
           </BigCards>
           <BigCards>
-            {/* <ZapperData /> */}
-            {/* <PriceChart /> */}
+            <ZapperData />
+            <PriceChart />
           </BigCards>
         {/* <Hero>
           <Heading as="h1" scale="xl" mb="24px" color="secondary">
